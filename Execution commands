@@ -1,0 +1,4 @@
+docker build -t group .
+docker run -itd --name group -p 8080:8080 -p 80:80 group
+docker exec group service apache2 start
+docker exec group service apache2 status
