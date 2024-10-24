@@ -70,5 +70,6 @@ COPY ./index.html /var/www/html
 EXPOSE 80
 EXPOSE 8080
 
-CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
-ENTRYPOINT ["/usr/local/apache-tomcat-11.0.0/bin/catalina.sh", "run"]
+# CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
+# ENTRYPOINT ["/usr/local/apache-tomcat-11.0.0/bin/catalina.sh", "run"]
+CMD ["sh", "-c", "/usr/sbin/apachectl -D FOREGROUND & /usr/local/apache-tomcat-11.0.0/bin/catalina.sh run"]
