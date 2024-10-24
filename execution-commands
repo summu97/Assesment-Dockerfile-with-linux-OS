@@ -1,5 +1,10 @@
+Manual way:
 docker build -t <img_name> </path/to/Dockerfile>
 docker run -itd --name <cont_name> -p 8080:8080 -p 80:80 <img_name>
 docker exec <cont_name> service apache2 start
 docker exec <cont_name> service apache2 status
 Now try accessing the applications via, <IP>:80 ; <IP>:8080
+
+Automation:
+gcloud auth login
+python3 script.py
